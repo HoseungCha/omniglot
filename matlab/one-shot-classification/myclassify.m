@@ -57,8 +57,8 @@ function costM = compute_costM_fast(trainset,testset,fcost)
     
     % Compute all the costs in parallel
     cost = nan(ncomp,1);
-    parfor ind=1:ncomp
-    %for ind=1:ncomp
+%     parfor ind=1:ncomp
+    for ind=1:ncomp
        [i,c] = ind2sub(sz,ind);
        cost(ind) = fcost(trainset{c},testset{i});
     end
